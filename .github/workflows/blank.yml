@@ -27,14 +27,15 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Add Android platform if missing
+      - name: Recreate Android platform cleanly
         run: |
-          if [ ! -d "android" ]; then
-            npx cap add android
-          fi
+          rm -rf android
+          npx cap add android
 
       - name: Sync Capacitor
-        run: npx cap sync android
+        run: |
+          mkdir -p android/app/src/main/assets
+          npx cap sync android
 
       - name: Build debug APK
         run: |
