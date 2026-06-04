@@ -3,6 +3,8 @@
   "appName": "Mi Ahorro",
   "webDir": "www",
   "server": {
+    "url": "https://finanzas.digitalctica.com",
+    "cleartext": false,
     "androidScheme": "https"
   },
   "plugins": {
